@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Sanjiga ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    font-family: 'Comic Sans MS', cursive;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    margin: 40px auto;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+h1 {
+    color: #ff4d6d;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 15px;
+    transition: 0.3s;
+}
+
+#yes {
+    background: #ff4d6d;
+    color: white;
+}
+
+#no {
+    background: #ccc;
+    position: relative;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 130px;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+#message {
+    display: none;
+    font-size: 22px;
+    color: #ff4d6d;
+    margin-top: 20px;
+}
+
+/* Floating hearts */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    font-size: 20px;
+    animation: float 5s linear infinite;
+    color: red;
+}
+
+@keyframes float {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-100vh);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Sanjiga ❤️</h1>
+
+    <p>
+        From the moment I met you,  
+        my world became brighter 🌎✨ <br><br>
+        You are my happiness, my peace,  
+        and my favorite notification 😜📱 <br><br>
+        Soooo Sanjiga…  
+        Will you be my Valentine? 💖
+    </p>
+
+    <button id="yes" onclick="sayYes()">YES 😍</button>
+    <button id="no" onmouseover="runAway()">NO 🙈</button>
+
+    <div id="message">
+        YAYYYYY 🥰🎉<br>
+        I love you so much Sanjiga ❤️<br>
+        You just made me the happiest person alive 😭💖
+    </div>
+
+    <h2>Our Cute Memories 📸</h2>
+    <div class="gallery">
+        <img src="photo1.jpg" alt="Memory 1">
+        <img src="photo2.jpg" alt="Memory 2">
+        <img src="photo3.jpg" alt="Memory 3">
+    </div>
+</div>
+
+<!-- Romantic background music -->
+<audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+let yesSize = 18;
+
+function runAway() {
+    const noBtn = document.getElementById("no");
+    const x = Math.random() * 300 - 150;
+    const y = Math.random() * 200 - 100;
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+
+    yesSize += 5;
+    document.getElementById("yes").style.fontSize = yesSize + "px";
+}
+
+function sayYes() {
+    document.getElementById("message").style.display = "block";
+}
+
+// Floating hearts generator
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 15 + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}, 500);
+</script>
+
+</body>
+</html>
